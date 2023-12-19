@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA HW 1215</title>
+</head>
+<body>
+    <header>
+       
+    </header>
+
+    <script>
+        function add(num1, num2){
+            alert(num1 + num2);
+        }
+        function subtract(num1, num2){
+            alert(num1 - num2);
+        }
+        function multiply(num1, num2){
+            alert(num1 * num2);
+        }
+        function divide(num1, num2){
+            if(num2 == 0){
+                alert(num1 + " can not divided by 0");
+            }else{
+                alert(num1 / num2);
+            }
+        }
+        
+        var firstInt;
+        var secontInt;
+        var flag = false;
+        while(!flag){
+            num1=parseFloat(prompt("Enter first number"));
+            while (isNaN(num1)){
+                alert("please enter a valid number");
+                num1=parseFloat(prompt("Enter first number"));
+            }
+            num2=parseFloat(prompt("Enter second number"));
+            while (isNaN(num2)){
+                alert("Please enter a valid number");
+                num2=parseFloat(prompt("Enter second number"));
+            }
+            var operation = window.prompt("Choose an operation (+, -, *, /))");
+            while(!["+", "-", "*", "/"].includes(operation)){
+                alert("Please enter a valid operation");
+                operation = window.prompt("Choose an operation (+, -, *, /))");
+            }
+            let output;
+            if(operation == "+"){
+                output = add(num1, num2);
+            }else if(operation == "-"){
+                output = subtract(num1, num2);
+            }else if(operation == "*"){
+                output = multiply(num1, num2);
+            }else if(operation == "/"){
+                output = divide(num1, num2);
+            }
+            var answer=parseFloat(prompt("Do you want to perform another calculation? (yes/no)"));
+            if(answer == "no"){
+                flag = true;
+            }
+        }
+    </script>
+
+</body>
+</html>
